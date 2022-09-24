@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="shoeItem"
+            type="com.example.shoestore.data.ShoeData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:padding="20dp">
+
+        <TextView
+            android:id="@+id/custom_layout_shoeName_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/person"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@={shoeItem.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/custom_layout_shoeCompany_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/company"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@={shoeItem.company}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/custom_layout_shoeName_txt" />
+
+        <TextView
+            android:id="@+id/custom_layout_shoeSize_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/size"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@{@string/shoeSize(shoeItem.size)}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/custom_layout_shoeCompany_txt" />
+
+        <TextView
+            android:id="@+id/custom_layout_shoeDesc_txt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/desc"
+            android:drawablePadding="8dp"
+            android:padding="8dp"
+            android:text="@={shoeItem.desc}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/custom_layout_shoeSize_txt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
